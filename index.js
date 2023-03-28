@@ -15,6 +15,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.status(200).json({ msg: 'The app is runing' })
+});
+
 // Routes
 app.use('/api/links', linkRoutes);
 app.use('/api/categories', categoryRoutes);
