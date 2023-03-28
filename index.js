@@ -30,7 +30,7 @@ app.use((err, req, res, next) => {
 // Start server
 sequelize.sync()
   .then(() => {
-    app.listen(process.env.PORT, () => {
+    app.listen(process.env.PORT || 8080, () => {
       console.log(`Server running on port ${process.env.PORT}`);
     });
   })
